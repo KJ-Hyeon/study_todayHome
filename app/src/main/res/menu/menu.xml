@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fragment_home"
+        android:title="홈"
+        android:icon="@drawable/ic_baseline_home_24" />
+
+    <item android:id="@+id/fragment_store"
+        android:title="스토어"
+        android:icon="@drawable/ic_baseline_store_24" />
+
+    <item android:id="@+id/fragment_interior"
+        android:title="인테리어시공"
+        android:icon="@drawable/ic_baseline_support_agent_24" />
+
+    <item android:id="@+id/fragment_page"
+        android:title="마이페이지"
+        android:icon="@drawable/ic_baseline_person_24" />
+</menu>

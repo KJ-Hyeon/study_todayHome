@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.jeong.android.bottomenav.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/fragment_page"
+        android:name="com.jeong.android.bottomenav.PageFragment"
+        android:label="PageFragment" />
+    <fragment
+        android:id="@+id/fragment_interior"
+        android:name="com.jeong.android.bottomenav.InteriorFragment"
+        android:label="InteriorFragment" />
+    <fragment
+        android:id="@+id/fragment_store"
+        android:name="com.jeong.android.bottomenav.StoreFragment"
+        android:label="StoreFragment" />
+
+</navigation>

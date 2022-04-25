@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_home"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchview_background"
+            android:drawableLeft="@drawable/searchview_icon"
+            android:hint="오늘의집 통합검색"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/searchicon_mark"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchicon_mark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_icon1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/searchicon_cart"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/search_view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/searchicon_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_icon2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/searchicon_mark"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/constraint"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="6.5">
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="인기" />
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="팔로잉" />
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="사진" />
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="집들이" />
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="노하우" />
+
+        <TextView
+            style="@style/MenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:text="전문가집들이" />
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/Linear"
+        android:background="#DCDCDC" />
+
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/Frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="10dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/banner1"
+                    app:shapeAppearanceOverlay="@style/RoundImage" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bannertext_background"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="4dp"
+                    android:text="2 / 13  +"
+                    android:textColor="@color/white" />
+
+            </FrameLayout>
+
+            <GridLayout
+                android:id="@+id/Grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:orientation="horizontal"
+                android:padding="15dp"
+                android:rowCount="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu1" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="쇼핑하기" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu2" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="빠른가구배송" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu3" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="N평집들이" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu4" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="공간별사진" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu5" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="간편시공" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu6" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="쉬운이사" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu7" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오늘의딜" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu8" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="첫구매혜" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu9" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="봄캉스특집" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/imageview_background"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/main_menu10" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/MenuSmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="향테리어" />
+                </LinearLayout>
+
+
+            </GridLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_below="@id/Grid"
+                android:layout_marginTop="10dp"
+                android:background="#DCDCDC" />
+
+            <TextView
+                style="@style/HeadText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:text="디스 이즈 싱글 라이프! 😎" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/design1" />
+
+                        <TextView
+                            style="@style/MenuText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="미니멀 하우스 블랙 &amp; 화이\n트, 그리고 짙은 우드" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/design2" />
+
+                        <TextView
+                            style="@style/MenuText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="화이트 속 다채로운 컬러감! \n 디자이너의 원룸" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/design3" />
+
+                        <TextView
+                            style="@style/MenuText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="n잡러의 첫 서울살이 돌고\n돌아 화이트" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/design4" />
+
+                        <TextView
+                            style="@style/MenuText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="영화 속 다락방처럼 사랑스\n러워진 창고방의 대변신" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
